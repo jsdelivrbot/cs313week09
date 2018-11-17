@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Postal Rate Calculator</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro|Allerta Stencil' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <script src="validate.js"></script>
+</head>
+<body>
+    <div class="container-fluid"> 
+        <div class="form_wrapper">
+            <div class="form_title">Postal Rate Calculator</div>
+            <form action="/calc" method="get" class="needs-validation">
+                <div class="row-fluid">
+                    <div class="form-group">
+                        <label for="mailType">Type of Mail:</label>
+                        <select class="form-control" name="mailType" id="mailType" required>
+                            <option value="stamped">Letters (Stamped)</option>
+                            <option value="metered">Letters (Metered)</option>
+                            <option value="flats">Large Envelopes (Flats)</option>
+                            <option value="retail">First-Class Package Service—Retail</option>
+                        </select>
+                        <div id="msgLimit" class="small muted">* For weights over 3.5 ounces, please use /"Large Envelopes(Flats)</div>
+                    </div>
+                    
+                </div>
+                <div class="row-fluid">
+                    <div class="form-group">
+                        <label for="weight">Weight <span class="muted">(in oz.)</span>:</label>
+                        <input type="number" min="0" max="13" step="0.01" name="weight" id="weight" class="form-control" value="" placeholder="Enter weight up to 13 oz." required />
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <input type="submit" id="getResult" name="getResult" class="btn btn-danger pull-right disabled" value="Get Result"/>
+                </div>
+            </form>
+        </div>
+     </div>
+</body>
+</html>

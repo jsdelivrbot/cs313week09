@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Postal Calculation Result</title>
+	<meta http-equiv="pragma" content="no-cache" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Advent Pro|Allerta Stencil' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+<%
+var displayResult = "";
+if(isNaN(result))
+	displayResult = "Sorry. rate could not be calculated.";
+	else {
+		displayResult = result.toLocaleString('en-US', {
+						  style: 'currency',
+						  currency: 'USD',
+						});
+	}
+
+var displayType = "";
+switch(mailType){
+	case 'stamped':
+		displayType = "Letters (Stamped)";
+		break;
+	case 'metered':
+		displayType = "Letters (Metered)";
+		break;
+	case 'flats':
+		displayType = "Large Envelopes (Flats)";
+		break;
+	case 'retail':
+		displayType = "First-Class Package Service-Retail";
+		break;
+	default:
+		displayType: "unknown";
+}
+%>
+<body>
+<div class="container">
+	<div class="form_wrapper">
+	<div class="form_title">Postal Calculation Result</div>
+	<div class="row">
+		<div class="col-md-5 text-right">Selected Mail Type:</div>
+		<div class="col-md-7"><%= displayType %></div>
+	</div>
+	<div class="row">
+		<div class="col-md-5 text-right">Weight:</div>
+		<div class="col-md-7"><%= weight %> oz.</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5 text-right">Result:</div>
+		<div class="col-md-7"><%= displayResult %></div>
+	</div>
+	<a href="postcalc.html" class="btn btn-danger">Calculate Again<a>
+	</div>
+<div>
+</body>
+</html>

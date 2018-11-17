@@ -1,0 +1,29 @@
+body {
+    background: 
+        url("../imgs/twine.png") no-repeat top left/100%,
+        url("../imgs/postmark.png") no-repeat top right,
+        url("../imgs/paper.png");
+    font-family: 'Advent Pro';
+}
+.form_wrapper {
+    background-color: rgba(255,255,255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    height: 260px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.form_title {
+    font-family: 'Allerta Stencil';
+    font-size: 20px;
+    color: firebrick;
+    font-variant: small-caps;
+}
+.bold {
+    font-weight: bold;
+}
